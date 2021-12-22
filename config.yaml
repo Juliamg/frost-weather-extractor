@@ -1,0 +1,26 @@
+
+logger:
+    console:
+        level: INFO
+
+cognite:
+    # Read these from environment variables
+    host: ${COGNITE_BASE_URL}
+    project: ${COGNITE_PROJECT}
+
+    idp-authentication:
+        token-url: ${COGNITE_TOKEN_URL}
+
+        client-id: ${COGNITE_CLIENT_ID}
+        secret: ${COGNITE_CLIENT_SECRET}
+        scopes:
+            - ${COGNITE_BASE_URL}/.default
+
+frost:
+    client_id: ${FROST_CLIENT_ID}
+    endpoint: "https://frost.met.no/observations/v0.jsonld"
+    sources: "SN18210"
+    referencetime: "2020-01-01/2021-01-12"
+    action: "update"
+    elements: "mean(air_temperature P1D)"
+    ts_external_id: "SN18210_OSLO"
